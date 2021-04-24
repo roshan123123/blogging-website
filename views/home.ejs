@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p><%= cont %> </p>
+
+ <% posts.forEach(function(ele) {                    %>
+  <h1> <%= ele.bTitle  %> </h1>
+   <% var x= ele.bBody.length;console.log(x); %>
+       <%   if(x >100){ %>
+
+          <p> <%= ele.bBody.substring(0,100)+"..." %><a href="/posts/<%= ele.bTitle  %>" >Read more</a> </p>
+
+       <%   } else {%>
+               <p> <%= ele.bBody%> </p>
+       <%  }%>
+
+
+ <% });                                              %>
+
+<!-- in href give routes -->
+
+<%- include("partials/footer") -%>
